@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -8,14 +12,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #333333;
+  height: 60px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
 }
 
 .App-link {
@@ -29,4 +38,73 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+header button {
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  bottom: 12px;
+}
+
+#map { 
+  height: calc(100vh - 60px); 
+  transition: transform 300ms ease-out;
+}
+
+.res-list {
+  width: 250px;
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: -250px;
+  z-index: 1000;
+  padding: 15px;
+  background: #333333;
+  height: 100vh;
+  transition: transform 300ms ease-out;
+}
+
+.res-list li {
+  display: block;
+  margin: 3px 0;
+}
+
+.res-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.res-list button {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  /* color: #fff; */
+  border-radius: 3px;
+}
+
+*:focus {
+  outline: 3px solid #ee240a;
+}
+
+ @keyframes bounce { 
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-30px);} 
+  60% {transform: translateY(-15px);} 
+}
+         
+.shift { 
+  transform: translateX(250px);
 }
