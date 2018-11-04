@@ -1,5 +1,5 @@
 console.log('inside sw');
-let currentCacheName = 'restaurants-v3';
+let currentCacheName = 'restaurants-v4';
 //const publicUrl = `${process.env.PUBLIC_URL}/`;
 //console.log(publicUrl);
 

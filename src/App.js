@@ -51,25 +51,20 @@ class App extends Component {
   } 
 
   render() {
-    //let restaurants = this.state.restaurants;
-    //console.log(restaurants);
-    if(this.state.error) {
+    //let restaurants = this.state.restaurants || [];
+    let copy = this.state.copy || [];
       return (
-        <div>There was an error fetching data</div>
-      )
-    }
-    else {
-      return (
-        <div className="App">
-          <header className="App-header">
-            <button onClick={() => { this.openNav() }}><i className="fa fa-bars"></i></button>
-            <h1>NextMeal</h1>
-          </header>
-          <Map restaurants={this.state.copy} popup={this.state.popup} />
-          <RestaurantList restaurants={this.state.copy || []} filterRes={this.filterRes} handleClick={this.handleClick} />
-        </div>
+        //restaurants.length > 0 && (
+          <div className="App">
+            <header className="App-header">
+              <button onClick={() => { this.openNav() }}><i className="fa fa-bars"></i></button>
+              <h1>NextMeal</h1>
+            </header>
+            <Map restaurants={copy} popup={this.state.popup} />
+            <RestaurantList restaurants={copy || []} filterRes={this.filterRes} handleClick={this.handleClick} />
+          </div>
+        //)
       );
-    }
   }
 }
 

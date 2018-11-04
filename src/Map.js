@@ -36,6 +36,7 @@ class Map extends Component {
 		this.markersLayer.eachLayer((layer => this.map.removeLayer(layer)));
 		restaurants.forEach((res) => {
 			let restaurant = res.restaurant;
+			//create markers and bind popup to each
 			restaurant.marker = L.marker([restaurant.location.latitude, restaurant.location.longitude]);
 			restaurant.marker.addTo(this.markersLayer);
 			restaurant.marker.bindPopup(`<strong>${restaurant.name}</strong><br>
@@ -47,9 +48,17 @@ class Map extends Component {
 				restaurant.marker.openPopup();
 				restaurant.marker.setIcon(this.customIcon).addTo(this.map);
 			}
+
+		//	console.log(this.map._layers.first);
+
+			// this.map._layers[0].on('tileerror', function (error, tile) {
+			// 	console.log(error);
+			// 	console.log(tile);
+			// 	document.querySelector('.error-block').style.display = "block";
+			// });
 		});		
-		// create marker and popup for each restaurant
 		
+		// add marker and popup for each restaurant
 		this.markersLayer.addTo(this.map);
 	}
 

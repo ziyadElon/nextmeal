@@ -6,7 +6,7 @@ class RestaurantList extends Component {
     //console.log(restaurants);
     return(
       <nav className="res-list">
-        <input onChange={(e) => this.props.filterRes(e.target.value)} placeholder="Search restaurants"/>
+        <input aria-label="Search" onChange={(e) => this.props.filterRes(e.target.value)} placeholder="Search restaurants"/>
         <ul>
           {restaurants.map(r => 
             (<li key={r.restaurant.id}>

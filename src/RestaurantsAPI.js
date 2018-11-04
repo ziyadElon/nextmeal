@@ -17,5 +17,8 @@ export const getNearbyRes = () =>
   fetch(requestUrl, { headers })
     .then(response => response.json())
     .then(data => data.restaurants, 
-          error => console.log("There was an error: " + error.message)
+          error => {
+            document.querySelector('.error-block').style.display = "block";
+            console.log("There was an error: " + error.message)
+          }
     )
